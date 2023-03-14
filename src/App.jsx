@@ -9,6 +9,7 @@ import Landing from './pages/Landing/Landing'
 import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import Instructions from './pages/Instuctions/Instructions'
+import Plots from './pages/Plots/Plots'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -66,6 +67,14 @@ const App = () => {
         <Route
           path="/instructions"
           element={<Instructions />}
+        />
+        <Route
+          path="/plots-setup"
+          element={
+            <ProtectedRoute user={user}>
+              <Plots />
+            </ProtectedRoute>
+          }
         />
       </Routes>
     </>
