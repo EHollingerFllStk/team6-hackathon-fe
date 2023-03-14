@@ -10,6 +10,7 @@ import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import Instructions from './pages/Instuctions/Instructions'
 import Plots from './pages/Plots/Plots'
+import AddPlot from "./pages/AddPlot/AddPlot"
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -76,6 +77,14 @@ const App = () => {
             </ProtectedRoute>
           }
         />
+        <Route
+          path="/plots/new"
+          element={
+            <ProtectedRoute user={user}>
+              <AddPlot />
+            </ProtectedRoute>
+          }
+          />
       </Routes>
     </>
   )
