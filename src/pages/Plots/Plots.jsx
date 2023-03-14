@@ -6,7 +6,7 @@ function Plots() {
     <div>
         <h1>Plots selector</h1>
         <p>Plot Container</p> 
-        <Link to="#">Create Custom Plot</Link>    
+        <Link to="/plots/new">Create Custom Plot</Link>    
     </div>
   )
 }
