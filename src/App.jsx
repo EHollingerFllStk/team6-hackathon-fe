@@ -125,7 +125,15 @@ const App = () => {
               <Awards profile={profile}/>
             </ProtectedRoute>
           }
-        />
+          />
+          <Route
+          path="/actions-setup"
+          element={
+            <ProtectedRoute user={user}>
+              <ActionsSetup />
+            </ProtectedRoute>
+          }
+          />
       </Routes>
 
     </>
