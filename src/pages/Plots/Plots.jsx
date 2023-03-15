@@ -1,4 +1,5 @@
 import styles from "./Plots.module.css"
+import editPot from '../../assets/Pots _ Plants/mobile-editpot.png'
 import { Link } from "react-router-dom"
 import { useState, useEffect } from "react"
 import * as profileService from '../../services/profileService'
@@ -23,7 +24,7 @@ function Plots({ user }) {
     <div>
         <h1>Plots selector</h1>
         <PlotsContainer plots={plots}/> 
-        <Link to="/plots/new">Create Custom Plot</Link>    
+        <Link to="/plots/new"><img src={editPot} alt="a pot with an edit icon" /></Link>    
     </div>
   )
 }
