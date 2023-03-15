@@ -1,4 +1,4 @@
-import styles from './Garden.module.css'
+// import styles from './Garden.module.css'
 
 export default function Garden() {
   return (
