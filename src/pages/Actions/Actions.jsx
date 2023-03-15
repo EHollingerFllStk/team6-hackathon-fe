@@ -1,16 +1,28 @@
 import styles from "./Actions.module.css"
 import * as actionService from '../../services/actionService'
 import ActionsSetup from "../ActionsSetup/ActionsSetup"
-import { useState } from "react"
+import { useState, useEffect } from "react"
+import * as profileService from '../../services/profileService'
 
 function Actions(props) {
-const [actions, setActions] = useState([])
+  const user = props.user
+  const [actions, setActions] = useState([])
   console.log(props, 'props')
 
-  const handleAddAction = async (actionData) => {
-    const newAction = await actionService.create(actionData)
+  const handleAddAction = async (actionData, id) => {
+    const newAction = await actionService.create(actionData, id)
     setActions([newAction, ...actions])
   }
+
+  const [profile, setProfile] = useState({})
+
+  useEffect(() => {
+    const fetchProfile = async () => {
+      const profileData = await profileService.getProfile(user.profile)
+      setProfile(profileData)
+    }
+    fetchProfile()
+  }, [user])
 
   // useEffect(() => {
   //   const fetchAllActions = async () => {
@@ -22,14 +34,22 @@ const [actions, setActions] = useState([])
 
   return (
     <div>
-      <h1>Welcome to your actions page, {props.profile.name}</h1>
-      <p>Plot Card Component</p>
-      <ActionsSetup props={props.profile} handleAddAction={handleAddAction}/>
+      {profile.plots &&
+      profile.plots.map((plot) => {
+        return (
+        <ActionsSetup key={plot._id} handleAddAction={handleAddAction} plot={plot}/>
+        )
+      }
+      )}
+
+      {/* {profile.plots.map((plot) => {
+        <ActionsSetup key={plot._id} plot={plot}/>
+      })
+    } */}
       <p>Update Action Form will go here</p>
       {/* <p>{props.profile.plot.action}</p> */}
     </div>
   )
-}
-
+  }
 export default Actions
 

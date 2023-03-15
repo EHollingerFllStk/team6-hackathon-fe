@@ -2,9 +2,9 @@ import * as tokenService from './tokenService'
 
 const BASE_URL = `${process.env.REACT_APP_BACK_END_SERVER_URL}/api/actions`
 
-const create = async (formData) => {
+const create = async (formData, id) => {
   try{
-    const res = await fetch(BASE_URL, {
+    const res = await fetch(`${BASE_URL}/${id}`, {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${tokenService.getToken()}`,
