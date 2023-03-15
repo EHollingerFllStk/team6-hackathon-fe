@@ -20,4 +20,7 @@ async function addPhoto(photoData, profileId) {
   return await res.json()
 }
 
+//needs controller to fetch profile backend needs a conroller and a route
+
+
 export { getAllProfiles, addPhoto }

@@ -1,0 +1,33 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+#logo {
+  height: 3rem;
+}
+
+.container .top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #374B17;
+  align-items: center;
+}
+
+.container ul {
+  list-style: none;
+  background-color: #374B17;
+  display: inline;
+  margin: 0;
+}
+
+.container li {
+  display: inline;
+  margin: 0 2rem;
+}
+
+.container a {
+  color: white;
+  text-decoration: none;
+}

@@ -1,5 +1,5 @@
 // npm modules
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Routes, Route, useNavigate, Navigate } from 'react-router-dom'
 
 // page components
@@ -12,6 +12,7 @@ import Instructions from './pages/Instuctions/Instructions'
 import Plots from './pages/Plots/Plots'
 import AddPlot from "./pages/AddPlot/AddPlot"
 import Actions from './pages/Actions/Actions'
+import Garden from './pages/Garden/Garden'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -19,13 +20,22 @@ import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
 
 // services
 import * as authService from './services/authService'
+import * as profileService from './services/profileService'
 
 // styles
 import './App.css'
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
+  const [profile, setProfile] = useState({})
   const navigate = useNavigate()
+
+  useEffect(() => {
+    const fetchProfile = async () => {
+      // const profileData = await profileService.getProfile()
+      //needs a controller to get just the logged in profile from the backend
+    }
+  }, [user])
 
   const handleLogout = () => {
     authService.logout()
@@ -95,6 +105,14 @@ const App = () => {
           element={
             <ProtectedRoute user={user}>
               <Actions />
+            </ProtectedRoute>
+          }
+          />
+          <Route
+          path="/garden"
+          element={
+            <ProtectedRoute user={user}>
+              <Garden />
             </ProtectedRoute>
           }
           />

@@ -2,4 +2,12 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+  background-color: #374B17;
+  height: 100vh;
+  width: 100vw;
+}
+
+.container img {
+  width: 80%;
+  margin: 5rem 0;
 }
