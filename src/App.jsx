@@ -106,7 +106,7 @@ const App = () => {
           path="/actions"
           element={
             <ProtectedRoute user={user}>
-              <Actions profile={profile}/>
+              <Actions profile={profile} user={user}/>
             </ProtectedRoute>
           }
           />

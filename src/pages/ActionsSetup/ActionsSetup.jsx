@@ -1,24 +1,58 @@
 import styles from "./ActionSetup.module.css"
+import { useState } from "react"
+import { useNavigate } from "react-router-dom"
 
-function ActionsSetup() {
+// Create Actions From
+function ActionsSetup(props) {
+  const navigate = useNavigate()
+  const [form, setForm] = useState({
+    name: '',
+  })
+
+  const handleChange = ({ target }) => {
+    setForm({ ...form, [target.name]: target.value })
+    console.log(target.name, 'name')
+    console.log(target.value, 'value')
+  }
+
+  const handleSubmit = ({ e }) => {
+    e.preventDefault()
+    console.log(form, 'form')
+    props.handleAddAction(form, props.plot._id)
+    navigate('actions')
+  }
+
   return (
-    <form >
-           <div className={styles.inputcontainer}>
-            <label htmlFor="name-input" input type="text">Name</label>
-            <input id="name-input" autoComplete="off" name="name" input type="text"></input>
-           </div>
-           <div className={styles.inputcontainer}>
-            <label htmlFor="reflection-input" input type="text">Reflection</label>
-            <input id="reflection-input" autoComplete="off" name="reflection" input type="text"></input>
-           </div>
-           {/* Possibly add state for checkbox feature */}
-           <div className={styles.inputcontainer}>
-            <label htmlFor="checkbox-input" type="checkbox">Completed</label>
-            <input id="checkbox-input" autoComplete="off" name="checkbox" input type="checkbox"></input>
-           </div>
-           
-            <button>Save</button>
-        </form>
+    <>
+      <h4>{props.plot.name}</h4>
+      <form onSubmit={handleSubmit}>
+        <div className={styles.inputcontainer}>
+          <label
+            htmlFor="name-input">
+            Name
+          </label>
+          <input
+            required
+            id="name-input"
+            autoComplete="off"
+            name="name"
+            type="text"
+            value={form.name}
+            onChange={handleChange}
+          >
+          </input>
+        </div>
+
+        <button type="submit">Save</button>
+      </form>
+      {props.plot.actions.map((action) => {
+        return (
+          <p> {action.name}</p>
+        )
+      })
+      }
+    </>
+
   )
 }
 
