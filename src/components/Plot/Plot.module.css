@@ -1,0 +1,13 @@
+.container {
+  background-image: url('../../assets/Pots\ _\ Plants/mobile-namelesspot.png');
+  background-size: cover;
+  height: 125px;
+  width: 125px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+}
