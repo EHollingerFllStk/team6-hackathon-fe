@@ -12,6 +12,7 @@ import Instructions from './pages/Instuctions/Instructions'
 import Plots from './pages/Plots/Plots'
 import AddPlot from "./pages/AddPlot/AddPlot"
 import Actions from './pages/Actions/Actions'
+import Awards from './pages/Awards/Awards'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -87,16 +88,25 @@ const App = () => {
               <AddPlot />
             </ProtectedRoute>
           }
-          />
-          <Route
+        />
+        <Route
           path="/actions"
           element={
             <ProtectedRoute user={user}>
               <Actions />
             </ProtectedRoute>
           }
-          />
+        />
+        <Route
+          path="/awards"
+          element={
+            <ProtectedRoute user={user}>
+              <Awards />
+            </ProtectedRoute>
+          }
+        />
       </Routes>
+
     </>
   )
 }
