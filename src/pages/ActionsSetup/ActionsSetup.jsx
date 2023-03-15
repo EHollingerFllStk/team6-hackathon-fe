@@ -1,8 +1,10 @@
 import styles from "./ActionSetup.module.css"
 import { useState } from "react"
+import { useNavigate } from "react-router-dom"
 
 // Create Actions From
 function ActionsSetup(props) {
+ const navigate = useNavigate()
   const [form, setForm] = useState({
     name: '',
   })
@@ -17,10 +19,12 @@ function ActionsSetup(props) {
     e.preventDefault()
     console.log(form, 'form')
     props.handleAddAction(form)
+    navigate('actions')
   }
 
   return (
 <>
+<h4>This is the form to add an action</h4>
     <form onSubmit={handleSubmit}>
       <div className={styles.inputcontainer}>
         <label

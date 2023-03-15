@@ -1,7 +1,7 @@
 import styles from "./Actions.module.css"
 import * as actionService from '../../services/actionService'
 import ActionsSetup from "../ActionsSetup/ActionsSetup"
-import { useState} from "react"
+import { useState } from "react"
 
 function Actions(props) {
 const [actions, setActions] = useState([])
@@ -15,11 +15,12 @@ const [actions, setActions] = useState([])
   return (
     <div>
       <h1>Welcome to your actions page, {props.profile.name}</h1>
+      <h4>Your actions are </h4>
 
       <h1>Action Page Headline</h1>
       <p>Plot Card</p>
       <ActionsSetup props={props.profile} handleAddAction={handleAddAction}/>
-      <p>Update Action Form</p>
+      <p>Update Action Form will go here</p>
     </div>
   )
 }
