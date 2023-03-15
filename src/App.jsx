@@ -11,6 +11,7 @@ import ChangePassword from './pages/ChangePassword/ChangePassword'
 import Instructions from './pages/Instuctions/Instructions'
 import Plots from './pages/Plots/Plots'
 import AddPlot from "./pages/AddPlot/AddPlot"
+import Actions from './pages/Actions/Actions'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -35,6 +36,8 @@ const App = () => {
   const handleSignupOrLogin = () => {
     setUser(authService.getUser())
   }
+
+
 
   return (
     <>
