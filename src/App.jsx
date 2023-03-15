@@ -1,6 +1,6 @@
 // npm modules
-import { useState, useEffect } from 'react'
-import { Routes, Route, useNavigate, Navigate } from 'react-router-dom'
+import { useState } from 'react'
+import { Routes, Route, useNavigate } from 'react-router-dom'
 
 // page components
 import Signup from './pages/Signup/Signup'
@@ -21,22 +21,22 @@ import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
 
 // services
 import * as authService from './services/authService'
-import * as profileService from './services/profileService'
+// import * as profileService from './services/profileService'
 
 // styles
 import './App.css'
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
-  const [profile, setProfile] = useState({})
+  // const [profile, setProfile] = useState({})
   const navigate = useNavigate()
 
-  useEffect(() => {
-    const fetchProfile = async () => {
-      // const profileData = await profileService.getProfile()
-      //needs a controller to get just the logged in profile from the backend
-    }
-  }, [user])
+  // useEffect(() => {  RE-IMPORT THIS HOOK
+  //   const fetchProfile = async () => {
+  //     const profileData = await profileService.getProfile()
+  //     needs a controller to get just the logged in profile from the backend
+  //   }
+  // }, [user])
 
   const handleLogout = () => {
     authService.logout()
