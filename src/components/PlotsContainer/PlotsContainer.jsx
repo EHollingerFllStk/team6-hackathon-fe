@@ -6,7 +6,7 @@ export default function PlotsContainer({ plots }) {
   return (
     <div>
       {plots.map((plot) =>
-      <p key={plot._id}>{plot.name}</p>
+      <Plot key={plot._id} plot={plot}/>
       )}
     </div>
   )

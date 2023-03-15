@@ -1,9 +1,9 @@
 import styles from './Plot.module.css'
 
-export default function Plot() {
+export default function Plot({ plot }) {
   return (
     <div>
-      this is a plot
+      <p>{plot.name}</p>
     </div>
   )
 }
