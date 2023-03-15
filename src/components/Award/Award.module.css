@@ -1,3 +1,9 @@
 .container {
-    outline: solid red;
+  text-align: center;
+
 }
+
+.container .grey {
+  filter: grayscale(100%)
+}
+

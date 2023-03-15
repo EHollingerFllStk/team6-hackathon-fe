@@ -1,9 +1,12 @@
 import styles from './Award.module.css'
 
-export default function Award( ) {
+export default function Award(props) {
+  const { image, title, balanced, grey } = props
   return (
     <div className={styles.container}>
-    <h4>This is the Award component! </h4>
+      <img className={styles.grey} src={image} alt=""/>
+      <p>{balanced}</p>
+      <p>{title}</p>
     </div>
   )
 }
