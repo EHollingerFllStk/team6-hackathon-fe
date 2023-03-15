@@ -13,6 +13,7 @@ import Plots from './pages/Plots/Plots'
 import AddPlot from "./pages/AddPlot/AddPlot"
 import Actions from './pages/Actions/Actions'
 import Garden from './pages/Garden/Garden'
+import Awards from './pages/Awards/Awards'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -99,8 +100,8 @@ const App = () => {
               <AddPlot />
             </ProtectedRoute>
           }
-          />
-          <Route
+        />
+        <Route
           path="/actions"
           element={
             <ProtectedRoute user={user}>
@@ -116,7 +117,16 @@ const App = () => {
             </ProtectedRoute>
           }
           />
+        <Route
+          path="/awards"
+          element={
+            <ProtectedRoute user={user}>
+              <Awards />
+            </ProtectedRoute>
+          }
+        />
       </Routes>
+
     </>
   )
 }
