@@ -12,15 +12,21 @@ const [actions, setActions] = useState([])
     setActions([newAction, ...actions])
   }
 
+  // useEffect(() => {
+  //   const fetchAllActions = async () => {
+  //     const data = await actionService.index()
+  //     console.log('Action Data:', data)
+  //   }
+  //   fetchAllActions()
+  // }, [])
+
   return (
     <div>
       <h1>Welcome to your actions page, {props.profile.name}</h1>
-      <h4>Your actions are </h4>
-
-      <h1>Action Page Headline</h1>
-      <p>Plot Card</p>
+      <p>Plot Card Component</p>
       <ActionsSetup props={props.profile} handleAddAction={handleAddAction}/>
       <p>Update Action Form will go here</p>
+      {/* <p>{props.profile.plot.action}</p> */}
     </div>
   )
 }
