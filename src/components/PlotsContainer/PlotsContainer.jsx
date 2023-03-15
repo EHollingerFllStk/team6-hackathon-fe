@@ -4,8 +4,8 @@ import Plot from '../Plot/Plot'
 export default function PlotsContainer({ plots }) {
   
   return (
-    <div>
-      {plots.map((plot) =>
+    <div className={styles.container}>
+      {plots && plots.map((plot) =>
       <Plot key={plot._id} plot={plot}/>
       )}
     </div>

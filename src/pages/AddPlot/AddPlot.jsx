@@ -1,4 +1,5 @@
 import styles from "./AddPlot.module.css"
+import pot from '../../assets/Pots _ Plants/mobile-namelesspot.png'
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import * as PlotsService from '../../services/plotsService'
@@ -22,21 +23,23 @@ function AddPlot() {
   }
   
   return (
-    <div>
-        <h1>AddPlot</h1>
+    <div className={styles.container}>
+        <h1>Name Your Pot</h1>
+        <img src={pot} alt="a pot with no label" />
         <form onSubmit={handleSubmit}>
-          <div className={styles.inputcontainer}>
-            <label htmlFor="name-input" input type="text">Name</label>
+          <div className={styles.inputContainer}>
+            {/* <label htmlFor="name-input" input type="text">Name</label> */}
             <input
               id="name-input"
               autoComplete="off"
               name="name"
               type="text"
+              placeholder="Type Here"
               onChange={handleChange}
               ></input>
           </div>
-          <div className={styles.inputcontainer}>
-            <label htmlFor="category-input">Category</label>
+          <div className={styles.inputContainer}>
+            {/* <label htmlFor="category-input">Category</label> */}
             <select
               id="category-input"
               name="category"
@@ -50,7 +53,7 @@ function AddPlot() {
                 <option value="other">Other</option>
             </select>
           </div>
-          <button>Save</button>
+          <button>Set New Pot</button>
 
         </form>
     </div>
