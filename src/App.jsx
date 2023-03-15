@@ -1,5 +1,5 @@
 // npm modules
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Routes, Route, useNavigate } from 'react-router-dom'
 
 // page components
@@ -21,22 +21,23 @@ import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
 
 // services
 import * as authService from './services/authService'
-// import * as profileService from './services/profileService'
+import * as profileService from './services/profileService'
 
 // styles
 import './App.css'
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
-  // const [profile, setProfile] = useState({})
+  const [profile, setProfile] = useState({})
   const navigate = useNavigate()
 
-  // useEffect(() => {  RE-IMPORT THIS HOOK
-  //   const fetchProfile = async () => {
-  //     const profileData = await profileService.getProfile()
-  //     needs a controller to get just the logged in profile from the backend
-  //   }
-  // }, [user])
+  useEffect(() => {
+    const fetchProfile = async () => {
+      const profileData = await profileService.getProfile(user.profile)
+      setProfile(profileData)
+    }
+    fetchProfile()
+  }, [user])
 
   const handleLogout = () => {
     authService.logout()
@@ -89,7 +90,7 @@ const App = () => {
           path="/plots-setup"
           element={
             <ProtectedRoute user={user}>
-              <Plots />
+              <Plots profile={profile}/>
             </ProtectedRoute>
           }
         />
@@ -97,7 +98,7 @@ const App = () => {
           path="/plots/new"
           element={
             <ProtectedRoute user={user}>
-              <AddPlot />
+              <AddPlot profile={profile}/>
             </ProtectedRoute>
           }
         />
@@ -105,7 +106,7 @@ const App = () => {
           path="/actions"
           element={
             <ProtectedRoute user={user}>
-              <Actions />
+              <Actions profile={profile}/>
             </ProtectedRoute>
           }
           />
@@ -113,7 +114,7 @@ const App = () => {
           path="/garden"
           element={
             <ProtectedRoute user={user}>
-              <Garden />
+              <Garden profile={profile}/>
             </ProtectedRoute>
           }
           />
@@ -121,7 +122,7 @@ const App = () => {
           path="/awards"
           element={
             <ProtectedRoute user={user}>
-              <Awards />
+              <Awards profile={profile}/>
             </ProtectedRoute>
           }
         />
