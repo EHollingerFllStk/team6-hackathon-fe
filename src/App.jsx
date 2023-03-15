@@ -36,6 +36,8 @@ const App = () => {
     setUser(authService.getUser())
   }
 
+
+
   return (
     <>
       <NavBar user={user} handleLogout={handleLogout} />
