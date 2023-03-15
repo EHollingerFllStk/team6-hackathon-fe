@@ -1,32 +1,32 @@
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import styles from './NavBar.module.css'
 import logo from '../../assets/logo.png'
 
 
-const NavBar = ({ user, handleLogout }) => {
+const NavBar = ({ user, handleLogout, profile }) => {
   return (
     <nav className={styles.container}>
       <div className={styles.top}>
-        <img src="/public/favicon.ico" alt="user avatar" id={styles.avatar}/>
-        <img src={logo} alt="logo" id={styles.logo}/>
-        <Link to="profiles">Profiles</Link>
+        <div>
+          <img src={profile.photo} alt="user avatar" id={styles.avatar}/>
+        </div>
+        <div>
+          <img src={logo} alt="logo" id={styles.logo}/>
+        </div>
+        <Link to="" onClick={handleLogout}>LOG OUT</Link>
       </div>
-      {user ?
-        <ul>
-          {/* <li>Welcome, {user.name}</li> */}
-          {/* <li><Link to="/profiles">Profiles</Link></li> */}
-          <li><Link to="/garden">Garden</Link></li>
-          <li><Link to="/actions">Tasks</Link></li>
-          <li><Link to="/awards">Badges</Link></li>
-          <li><Link to="" onClick={handleLogout}>LOG OUT</Link></li>
-          <li><Link to="/change-password">Change Password</Link></li>
-        </ul>
-      :
-        <ul>
-          {/* <li><Link to="/login">Log In</Link></li>
-          <li><Link to="/signup">Sign Up</Link></li> */}
-        </ul>
-      }
+      <div className={styles.bottom}>
+        {user ?
+          <>
+            <NavLink to="/garden">Garden</NavLink>
+            <NavLink to="/actions">Tasks</NavLink>
+            <NavLink to="/awards">Badges</NavLink>
+          </>
+        :
+          <>
+          </>
+        }
+      </div>
     </nav>
   )
 }
