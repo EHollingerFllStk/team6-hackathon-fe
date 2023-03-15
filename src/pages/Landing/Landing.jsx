@@ -1,9 +1,14 @@
 import styles from './Landing.module.css'
+import logo from '../../assets/logo.png'
+import { Link } from 'react-router-dom'
+
 
 const Landing = ({ user }) => {
   return (
     <main className={styles.container}>
-      <h1>hello, {user ? user.name : 'friend'}</h1>
+      <img src={logo} alt="logo" />
+      <Link to={'/login'}>Log In</Link>
+      <Link to={'/signup'}>Sign Up</Link>
     </main>
   )
 }
