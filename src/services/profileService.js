@@ -20,7 +20,15 @@ async function addPhoto(photoData, profileId) {
   return await res.json()
 }
 
-//needs controller to fetch profile backend needs a conroller and a route
+async function getProfile(id) {
+  try {
+    const res = await fetch(`${BASE_URL}/${id}`, {
+      headers: { 'Authorization': `Bearer ${tokenService.getToken()}` },
+    })
+    return res.json()
+  } catch (error) {
+    console.log(error)
+  }
+}
 
-
-export { getAllProfiles, addPhoto }
+export { getAllProfiles, addPhoto, getProfile }
