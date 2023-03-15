@@ -1,0 +1,44 @@
+.container{
+  text-align: center;
+  padding: 5rem 0;
+}
+
+.container .progressContainer {
+  display: flex;
+  margin: 5rem auto;
+  align-items: flex-start;
+  background-color: white;
+  width: 70vw;
+  height: 1rem;
+  border-radius: 50px;
+  box-shadow: 0px 4px 4px #0000004f;
+}  
+
+.container .bar {
+  background-color: #fed402;
+  width: 50%;
+  height: 100%;
+  border-radius: 50px;
+}
+
+.container .awardsContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  place-items: center;
+  align-items: start;
+  margin: 1rem;
+}
+
+.container p {
+  margin: 0;
+  padding: 0;
+}
+
+.container hr {
+  background-color: white;
+  width: 70vw;
+  height: 1vh;
+  outline: solid black;
+  border-radius: 1rem;
+}
