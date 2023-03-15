@@ -5,7 +5,7 @@ export default function PlotsContainer({ plots }) {
   
   return (
     <div>
-      {plots.map((plot) =>
+      {plots && plots.map((plot) =>
       <Plot key={plot._id} plot={plot}/>
       )}
     </div>

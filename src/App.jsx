@@ -90,7 +90,7 @@ const App = () => {
           path="/plots-setup"
           element={
             <ProtectedRoute user={user}>
-              <Plots profile={profile}/>
+              <Plots profile={profile} user={user}/>
             </ProtectedRoute>
           }
         />

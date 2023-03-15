@@ -1,20 +1,23 @@
 import styles from "./Plots.module.css"
 import { Link } from "react-router-dom"
 import { useState, useEffect } from "react"
-import * as plotsService from '../../services/plotsService'
+import * as profileService from '../../services/profileService'
+// import * as plotsService from '../../services/plotsService'
 import PlotsContainer from "../../components/PlotsContainer/PlotsContainer"
 
-function Plots() {
-  const [plots, setPlots] = useState([])
-
-  useEffect(() => {
-    const fetchPlots = async () => {
-      const plotsData = await plotsService.getPlots()
-      setPlots(plotsData)
-    }
-    fetchPlots()
-  }, [])
+function Plots({ user }) {
+  // const [plots, setPlots] = useState([])
+  const [profile, setProfile] = useState({})
   
+  useEffect(() => {
+    const fetchProfile = async () => {
+      const profileData = await profileService.getProfile(user.profile)
+      setProfile(profileData)
+    }
+    fetchProfile()
+  }, [user])
+  
+  const plots = profile.plots
   
   return (
     <div>
