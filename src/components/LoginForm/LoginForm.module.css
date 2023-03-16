@@ -11,6 +11,50 @@
   margin-right: 0.5rem;
 }
 
-.inputContainer {
+.container .inputContainer {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+}
+
+.container input {
+  width: 14rem;
+  height: 3rem;
+  background-color: #FFFFFF;
+  color: #AB8B73;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0px 4px 4px #0000004f;
+  font-weight: bold;
+}
+
+.container button {
+  width: 14rem;
+  height: 3rem;
+  background-color: #FED201;
+  color: #292929;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0px 4px 4px #0000004f;
+  text-align: center;
+  font-weight: bold;
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 1rem;
+}
+
+.container button:hover {
+  cursor: pointer;
+}
+
+.container label{
+  color: white;
+  margin-bottom: .5rem;
+}
+
+.container .buttonsDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

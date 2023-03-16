@@ -1,12 +1,13 @@
 import styles from './ProgressPlantContainer.module.css';
 import ProgressPlant from '../ProgressPlant/ProgressPlant';
 
-export default function ProgressPlantContainer({ profile }) {
+export default function ProgressPlantContainer({ plots }) {
+  
   return (
-    <div>
-        {profile.plots.map((plot) =>
-        <ProgressPlant key={plot._id} plot={plot} />
-        )}
+    <div className={styles.container}>
+      {plots.map((plot) => 
+      <ProgressPlant key={plot._id} plot={plot}/>
+      )}
     </div>
   )
 }

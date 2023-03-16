@@ -1,0 +1,22 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  width: 33vw;
+  text-align: center;
+}
+
+.container img {
+  object-fit: contain;
+  width: 90%;
+}
+
+.container p {
+  color: white;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.container a {
+  text-decoration: none;
+}
