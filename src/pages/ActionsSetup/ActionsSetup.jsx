@@ -16,6 +16,7 @@ function ActionsSetup(props) {
   const handleSubmit = (e) => {
     e.preventDefault()
     props.handleAddAction(form, props.plot._id)
+    navigate('/actions')
   }
 
   return (
@@ -38,12 +39,12 @@ function ActionsSetup(props) {
           >
           </input>
         </div>
-
         <button type="submit">Save</button>
+
       </form>
       {props.plot.actions.map((action) => {
         return (
-          <p> {action.name}</p>
+          <p key={action._id}> {action.name}</p>
         )
       })
       }

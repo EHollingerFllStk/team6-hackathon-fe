@@ -24,32 +24,35 @@ function Actions(props) {
     fetchProfile()
   }, [user])
 
-  // useEffect(() => {
-  //   const fetchAllActions = async () => {
-  //     const data = await actionService.index()
-  //     console.log('Action Data:', data)
-  //   }
-  //   fetchAllActions()
-  // }, [])
+
+  const [formData, setFormData] = useState({ completed: false })
+
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    setFormData({ completed: true })
+    console.log(formData, 'formData')
+    await actionService.update(formData)
+  }
 
   return (
     <div>
       {profile.plots &&
-      profile.plots.map((plot) => {
-        return (
-        <ActionsSetup key={plot._id} handleAddAction={handleAddAction} plot={plot}/>
-        )
-      }
-      )}
-
-      {/* {profile.plots.map((plot) => {
-        <ActionsSetup key={plot._id} plot={plot}/>
-      })
-    } */}
-      <p>Update Action Form will go here</p>
-      {/* <p>{props.profile.plot.action}</p> */}
+        profile.plots.map((plot) => {
+          return (
+            <ActionsSetup key={plot._id} handleAddAction={handleAddAction} plot={plot} />
+          )
+        }
+        )}
+      <div>
+        <form onSubmit={handleSubmit}>
+          <label>Action Name To update:</label>
+          <label>Completed</label>
+          <button>X</button>
+        </form>
+      </div>
     </div>
   )
-  }
+}
 export default Actions
 
