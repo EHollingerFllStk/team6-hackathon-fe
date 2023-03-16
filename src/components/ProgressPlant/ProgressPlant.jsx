@@ -11,8 +11,9 @@ export default function ProgressPlant({ plot }) {
   const completeActions = plot.actions.filter((action) => action.completed === true)
   const completedActionCount = completeActions.length
 
-  const pointsPerAction = 10
-  const totalPoints = completedActionCount * pointsPerAction
+  // points for iceBox
+  // const pointsPerAction = 10
+  // const totalPoints = completedActionCount * pointsPerAction
 
   let percentComplete = completedActionCount / actionsCount
 
@@ -36,7 +37,7 @@ export default function ProgressPlant({ plot }) {
               <img src={large} alt="large plant" />
         }
         <p>{plot.name}</p>
-        <p>Points: {totalPoints}</p>
+        {/* <p>Points: {totalPoints}</p> */}
       </Link>
     </div>
   )
