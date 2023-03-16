@@ -19,6 +19,27 @@ const create = async (formData, id) => {
   }
 }
 
+const update = async(formData, Id) => {
+  console.log('updateFormData', formData)
+  // console.log('actionId', actionId)
+  try{
+    const res = await fetch(`${BASE_URL}/${Id}`,{
+      method: 'PUT',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`,
+        'Content-Type':'application/json'
+      },
+      body: JSON.stringify(formData)
+    })
+    return res.json()
+  } catch (error){
+    console.log(error)
+  }
+}
+
+
+
 export {
-  create
+  create,
+  update
 }

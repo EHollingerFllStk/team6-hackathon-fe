@@ -24,32 +24,18 @@ function Actions(props) {
     fetchProfile()
   }, [user])
 
-  // useEffect(() => {
-  //   const fetchAllActions = async () => {
-  //     const data = await actionService.index()
-  //     console.log('Action Data:', data)
-  //   }
-  //   fetchAllActions()
-  // }, [])
 
   return (
     <div>
       {profile.plots &&
-      profile.plots.map((plot) => {
-        return (
-        <ActionsSetup key={plot._id} handleAddAction={handleAddAction} plot={plot}/>
-        )
-      }
-      )}
-
-      {/* {profile.plots.map((plot) => {
-        <ActionsSetup key={plot._id} plot={plot}/>
-      })
-    } */}
-      <p>Update Action Form will go here</p>
-      {/* <p>{props.profile.plot.action}</p> */}
+        profile.plots.map((plot) => {
+          return (
+            <ActionsSetup key={plot._id} handleAddAction={handleAddAction} plot={plot} />
+          )
+        }
+        )}
     </div>
   )
-  }
+}
 export default Actions
 
