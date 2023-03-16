@@ -1,9 +1,23 @@
-// import styles from './Garden.module.css'
+import styles from './Garden.module.css'
+import ProgressPlantContainer from '../../components/ProgressPlantContainer/ProgressPlantContainer'
+import { useState, useEffect } from "react"
+import * as plotsService from '../../services/plotsService'
 
-export default function Garden() {
+export default function Garden({ user, profile }) {
+  const [plots, setPlots] = useState([])
+
+  useEffect(() => {
+    const fetchPlots = async () => {
+      const plotsData = await plotsService.getPlotsById(profile._id)
+      setPlots(plotsData)
+    }
+    fetchPlots()
+  }, [])
+
+  if (!plots) return 
   return (
-    <div>
-      <h1>This is the garden page</h1>
+    <div className={styles.container}>
+      <ProgressPlantContainer plots={plots} />
     </div>
   )
 }

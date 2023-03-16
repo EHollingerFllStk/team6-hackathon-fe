@@ -1,17 +1,32 @@
 .container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: end;
+  width: 33vw;
+  text-align: center;
 }
 
-.link{
+.container img {
+  /* object-fit: contain; */
+  object-fit: contain;
+  /* width: 90%; */
+  width: 30vh;
+  /* max-height: 70rem; */
+}
+
+.container p {
+  color: white;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.container a {
+  text-decoration: none;
+}
+
+.container div div {
   text-decoration: none;
   color: #374b17;
-}
-
-.link:hover{
-  color: brown;
 }
 
 .container .textbox {
@@ -27,6 +42,8 @@
 
 .container .tooltip{
   display: flex;
+  flex-direction: column;
+  justify-content: start;
   margin-top: 2rem;
 }
 

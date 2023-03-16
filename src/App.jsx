@@ -1,6 +1,6 @@
 // npm modules
 import { useState, useEffect } from 'react'
-import { Routes, Route, useNavigate } from 'react-router-dom'
+import { Routes, Route, useNavigate, useLocation } from 'react-router-dom'
 
 // page components
 import Signup from './pages/Signup/Signup'
@@ -30,6 +30,8 @@ const App = () => {
   const [user, setUser] = useState(authService.getUser())
   const [profile, setProfile] = useState({})
   const navigate = useNavigate()
+
+
 
   useEffect(() => {
     const fetchProfile = async () => {
@@ -90,7 +92,7 @@ const App = () => {
           path="/plots-setup"
           element={
             <ProtectedRoute user={user}>
-              <Plots profile={profile}/>
+              <Plots profile={profile} user={user}/>
             </ProtectedRoute>
           }
         />
@@ -106,7 +108,7 @@ const App = () => {
           path="/actions"
           element={
             <ProtectedRoute user={user}>
-              <Actions profile={profile}/>
+              <Actions profile={profile} user={user}/>
             </ProtectedRoute>
           }
           />

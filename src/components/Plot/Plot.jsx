@@ -2,7 +2,7 @@ import styles from './Plot.module.css'
 
 export default function Plot({ plot }) {
   return (
-    <div>
+    <div className={styles.container}>
       <p>{plot.name}</p>
     </div>
   )
