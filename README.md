@@ -22,6 +22,7 @@
 ## Attributions
 #### Background art by [ItsEndy](https://www.deviantart.com/itsendy/gallery)
 #### Kenny the Corgi by Yan Lui
+#### JWT auth template by [Ben Manley](https://github.com/ManliestBen) and [David Stinson](https://github.com/DavidStinson)
 
 ## Icebox
 - [ ] Dynamic awards
