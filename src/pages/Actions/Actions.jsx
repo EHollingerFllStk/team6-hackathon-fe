@@ -11,6 +11,7 @@ function Actions(props) {
   const handleAddAction = async (actionData, id) => {
     const newAction = await actionService.create(actionData, id)
     setActions([newAction, ...actions])
+    window.location.reload()
   }
 
   const [profile, setProfile] = useState({})
@@ -26,7 +27,7 @@ function Actions(props) {
 
 
   return (
-    <div>
+    <div className={styles.container}>
       {profile.plots &&
         profile.plots.map((plot) => {
           return (
@@ -38,4 +39,3 @@ function Actions(props) {
   )
 }
 export default Actions
-
