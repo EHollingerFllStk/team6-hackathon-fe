@@ -24,6 +24,6 @@
 #### Kenny the Corgi by Yan Lui
 
 ## Icebox
-[ ] Dynamic awards
-[ ] Social networking
-[ ] Improved edit and delete functionality
+- [ ] Dynamic awards
+- [ ] Social networking
+- [ ] Improved edit and delete functionality
