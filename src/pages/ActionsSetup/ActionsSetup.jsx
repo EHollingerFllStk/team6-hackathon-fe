@@ -4,6 +4,7 @@ import * as actionService from '../../services/actionService'
 import check from '../../assets/Misc/Green check (complete task action).png'
 import completed  from '../../assets/Misc/Completed_badge.png'
 import add from '../../assets/Misc/Plus button (add task action).png'
+import gray from '../../assets/Misc/gray check mark.png'
 
 function ActionsSetup(props) {
   const [form, setForm] = useState({
@@ -59,9 +60,9 @@ function ActionsSetup(props) {
               }}>
                 <label>{action.name}</label>
                 {action.completed ?
-                <button><img src={completed} alt="a gold metal" /></button>
+                <button><img src={check} alt="a green check mark" /></button>
                 :
-                <button><img src={check} alt="a green checkmark" /></button>
+                <button><img src={gray} alt="a gray check box" /></button>
                 }
               </form>
             </div>

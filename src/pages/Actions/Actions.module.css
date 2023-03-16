@@ -4,3 +4,33 @@
   justify-content: center;
   align-items: center;
 }
+
+.link{
+  text-decoration: none;
+  color: #374b17;
+}
+
+.link:hover{
+  color: brown;
+}
+
+.container .textbox {
+  background-image: url("../../assets/Branding/yellow\ chat\ box.png");
+  height: 10rem;
+  width: 20rem;
+  background-size:cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.container .tooltip{
+  display: flex;
+  margin-top: 2rem;
+}
+
+.container .textbox p{
+  width: 18rem;
+  text-align: center;
+}
