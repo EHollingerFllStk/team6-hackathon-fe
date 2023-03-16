@@ -12,3 +12,7 @@
   text-align: center;
   margin: 1rem;
 }
+
+.container p {
+  width: 100px;
+}
