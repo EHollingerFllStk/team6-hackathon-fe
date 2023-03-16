@@ -4,6 +4,7 @@ import small from '../../assets/Pots _ Plants/ficus elastica tineke - small.png'
 import medium from '../../assets/Pots _ Plants/ficus elastica tineke - medium.png';
 import large from '../../assets/Pots _ Plants/ficus elastica tineke - large.png';
 import { Link } from 'react-router-dom';
+import corgi from '../../assets/Branding/mobile-corgi.png'
 
 
 export default function ProgressPlant({ plot }) {
@@ -20,7 +21,7 @@ export default function ProgressPlant({ plot }) {
   console.log(completeActions, "complete actions")
 
 
-  if (plot.actions.length === 0) return <p className={styles.redirect}><Link to="/actions">Add tasks to your "{plot.name}" pot</Link></p>
+  if (plot.actions.length === 0) return 
 
   return (
     <div className={styles.container}>

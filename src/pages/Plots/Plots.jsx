@@ -5,6 +5,7 @@ import { useState, useEffect } from "react"
 import * as profileService from '../../services/profileService'
 // import * as plotsService from '../../services/plotsService'
 import PlotsContainer from "../../components/PlotsContainer/PlotsContainer"
+import corgi from '../../assets/Branding/mobile-corgi.png'
 
 function Plots({ user }) {
   // const [plots, setPlots] = useState([])
@@ -29,8 +30,6 @@ function Plots({ user }) {
 
     <div className={styles.container}>
       <h1>Let's set some intentions</h1>
-      <h3>What do you want to focus on?</h3>
-      <h3>Choose 3 pots to focus on</h3>
       <PlotsContainer plots={plots} />
       {plots.length < 3 ?
         <>
@@ -47,7 +46,15 @@ function Plots({ user }) {
         :
         <></>
       }
-  
+   <div className={styles.tooltip}>
+          <div className={styles.textbox}>
+            <p>Hi friend, any parts of your life need balance?</p>
+            <p>Choose 3 pots to focus on.</p>
+          </div>
+          <div className={styles.corgi}>
+          <img src={corgi} alt="corgi-logo" />
+          </div>
+        </div>
     </div>
   )
 }

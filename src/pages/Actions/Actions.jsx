@@ -4,6 +4,7 @@ import ActionsSetup from "../ActionsSetup/ActionsSetup"
 import { useState, useEffect } from "react"
 import * as profileService from '../../services/profileService'
 import { Link } from "react-router-dom"
+import corgi from '../../assets/Branding/mobile-corgi.png'
 
 function Actions(props) {
   const user = props.user
@@ -29,8 +30,6 @@ function Actions(props) {
 
   return (
     <div className={styles.container}>
-      <h4>Get started by adding an equal number of tasks to each flower pot by typing in the form and clicking the red plus button.</h4>
-      <h4>Once you complete a task, mark it complete by clicking on the gold medal next to it! See your progress in the <Link to="/garden" className={styles.link}>Garden</Link></h4>
       {profile.plots &&
         profile.plots.map((plot) => {
           return (
@@ -38,6 +37,14 @@ function Actions(props) {
           )
         }
         )}
+        <div className={styles.tooltip}>
+          <div className={styles.textbox}>
+            <p>Add tasks here! Mark them complete by clicking the grey check box. See your progress in the <Link to="/garden" className={styles.link}>Garden</Link></p>
+          </div>
+          <div className={styles.corgi}>
+          <img src={corgi} alt="corgi-logo" />
+          </div>
+        </div>
     </div>
   )
 }

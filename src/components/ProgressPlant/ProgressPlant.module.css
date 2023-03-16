@@ -24,9 +24,30 @@
   text-decoration: none;
 }
 
-.redirect a {
+.container div div {
   text-decoration: none;
-  color: #fff;
-  border: black 2px solid;
+  color: #374b17;
+}
 
+.container .textbox {
+  background-image: url("../../assets/Branding/yellow\ chat\ box.png");
+  height: 10rem;
+  width: 20rem;
+  background-size:cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.container .tooltip{
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  margin-top: 2rem;
+}
+
+.container .textbox p{
+  width: 18rem;
+  text-align: center;
 }
