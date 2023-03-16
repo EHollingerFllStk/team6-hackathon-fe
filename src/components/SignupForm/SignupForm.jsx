@@ -11,7 +11,7 @@ const SignupForm = props => {
     password: '',
     passwordConf: '',
   })
-  const [photoData, setPhotoData] = useState({})
+  const [photoData, setPhotoData] = useState(null)
 
   const handleChange = e => {
     props.updateMessage('')
@@ -56,6 +56,7 @@ const SignupForm = props => {
           id="name"
           value={name}
           name="name"
+          placeholder='First and Last Name'
           onChange={handleChange}
         />
       </div>
@@ -67,6 +68,7 @@ const SignupForm = props => {
           id="email"
           value={email}
           name="email"
+          placeholder='example@example.com'
           onChange={handleChange}
         />
       </div>
@@ -78,6 +80,7 @@ const SignupForm = props => {
           id="password"
           value={password}
           name="password"
+          placeholder='Password'
           onChange={handleChange}
         />
       </div>
@@ -91,13 +94,21 @@ const SignupForm = props => {
           id="confirm"
           value={passwordConf}
           name="passwordConf"
+          placeholder='Confirm Password'
           onChange={handleChange}
         />
       </div>
-      <div className={styles.inputContainer}>
+      <div className={styles.inputContainerPhoto}>
+        {photoData ? 
+        <label htmlFor="photo-upload" className={styles.label}>
+          Photo Added
+        </label>
+        :
         <label htmlFor="photo-upload" className={styles.label}>
           Upload Photo
         </label>
+        }
+        
         <input
           type="file"
           id="photo-upload"
