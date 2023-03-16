@@ -7,8 +7,11 @@
 }
 
 .container img {
+  /* object-fit: contain; */
   object-fit: contain;
-  width: 90%;
+  /* width: 90%; */
+  width: 30vhhttp://localhost:3000/actions;
+  /* max-height: 70rem; */
 }
 
 .container p {
