@@ -14,7 +14,7 @@ export default function Garden({ user, profile }) {
     fetchPlots()
   }, [])
 
-  
+  if (!plots) return
   return (
     <div className={styles.container}>
       <ProgressPlantContainer plots={plots} />
