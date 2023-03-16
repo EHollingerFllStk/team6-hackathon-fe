@@ -19,13 +19,19 @@ function Plots({ user }) {
   }, [user])
   
   const plots = profile.plots
-  
+  console.log(typeof plots)
   return (
     <div className={styles.container}>
         <h1>Let's set some intentions</h1>
         <h3>What do you want to focus on?</h3>
         <PlotsContainer plots={plots}/> 
+        {/* {profile && plots.length >= 3 ? 
+        <></>
+        :
+        <>
         <Link to="/plots/new" id={styles.new}><img src={editPot} alt="a pot with an edit icon" /></Link>
+        </>
+        } */}
         <Link to={'/garden'} id={styles.link}>Go to Garden</Link>    
     </div>
   )
