@@ -25,16 +25,6 @@ function Actions(props) {
   }, [user])
 
 
-  const [formData, setFormData] = useState({ completed: false })
-
-
-  const handleSubmit = async (e) => {
-    e.preventDefault()
-    setFormData({ completed: true })
-    console.log(formData, 'formData')
-    await actionService.update(formData)
-  }
-
   return (
     <div>
       {profile.plots &&
@@ -44,13 +34,6 @@ function Actions(props) {
           )
         }
         )}
-      <div>
-        <form onSubmit={handleSubmit}>
-          <label>Action Name To update:</label>
-          <label>Completed</label>
-          <button>X</button>
-        </form>
-      </div>
     </div>
   )
 }

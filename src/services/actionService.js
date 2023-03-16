@@ -19,10 +19,11 @@ const create = async (formData, id) => {
   }
 }
 
-const update = async(formData) => {
+const update = async(formData, Id) => {
   console.log('updateFormData', formData)
+  // console.log('actionId', actionId)
   try{
-    const res = await fetch(`${BASE_URL}/${formData._id}`,{
+    const res = await fetch(`${BASE_URL}/${Id}`,{
       method: 'PUT',
       headers: {
         'Authorization': `Bearer ${tokenService.getToken()}`,
