@@ -11,15 +11,11 @@ function ActionsSetup(props) {
 
   const handleChange = ({ target }) => {
     setForm({ ...form, [target.name]: target.value })
-    console.log(target.name, 'name')
-    console.log(target.value, 'value')
   }
 
-  const handleSubmit = ({ e }) => {
+  const handleSubmit = (e) => {
     e.preventDefault()
-    console.log(form, 'form')
     props.handleAddAction(form, props.plot._id)
-    navigate('actions')
   }
 
   return (
