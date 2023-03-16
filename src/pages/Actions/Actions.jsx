@@ -7,7 +7,6 @@ import * as profileService from '../../services/profileService'
 function Actions(props) {
   const user = props.user
   const [actions, setActions] = useState([])
-  console.log(props, 'props')
 
   const handleAddAction = async (actionData, id) => {
     const newAction = await actionService.create(actionData, id)
@@ -15,6 +14,7 @@ function Actions(props) {
   }
 
   const [profile, setProfile] = useState({})
+
 
   useEffect(() => {
     const fetchProfile = async () => {
