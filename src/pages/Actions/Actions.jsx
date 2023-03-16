@@ -30,6 +30,7 @@ function Actions(props) {
 
   return (
     <div className={styles.container}>
+      <h1>Add Your Tasks</h1>
       {profile.plots &&
         profile.plots.map((plot) => {
           return (
@@ -39,7 +40,7 @@ function Actions(props) {
         )}
         <div className={styles.tooltip}>
           <div className={styles.textbox}>
-            <p>Add tasks here! Mark them complete by clicking the grey check box. See your progress in the <Link to="/garden" className={styles.link}>Garden</Link></p>
+            <p>Add tasks here! Mark them complete by clicking the grey check box to make your plants grow. See your progress in the <Link to="/garden" className={styles.link}>Garden.</Link></p>
           </div>
           <div className={styles.corgi}>
           <img src={corgi} alt="corgi-logo" />
