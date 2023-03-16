@@ -11,26 +11,32 @@ export default function ProgressPlant({ plot }) {
   const completeActions = plot.actions.filter((action) => action.completed === true)
   const completedActionCount = completeActions.length
 
+  const pointsPerAction = 10
+  const totalPoints = completedActionCount * pointsPerAction
+
   let percentComplete = completedActionCount / actionsCount
 
   console.log(completeActions, "complete actions")
-  // percentComplete = .66
+
+
+  if (plot.actions.length === 0) return <p className={styles.redirect}><Link to="/actions">Add tasks to your "{plot.name}" pot</Link></p>
 
   return (
     <div className={styles.container}>
       <Link to={"/actions"}>
         {percentComplete === 0 ?
-        <img src={empty} alt="empty pot" style={{width: 80}}/>
-        :
-          percentComplete < .4 ?
-          <img src={small} alt="small plant" />
+          <img src={empty} alt="empty pot" style={{ width: 80 }} />
           :
-            percentComplete < .7 ?
-            <img src={medium} alt="medium plant" />
+          percentComplete < .4 ?
+            <img src={small} alt="small plant" />
             :
-            <img src={large} alt="large plant" />
+            percentComplete < .7 ?
+              <img src={medium} alt="medium plant" />
+              :
+              <img src={large} alt="large plant" />
         }
         <p>{plot.name}</p>
+        <p>Points: {totalPoints}</p>
       </Link>
     </div>
   )

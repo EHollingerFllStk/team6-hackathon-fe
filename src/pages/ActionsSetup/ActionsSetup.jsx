@@ -59,9 +59,9 @@ function ActionsSetup(props) {
               }}>
                 <label>{action.name}</label>
                 {action.completed ?
-                <button><img src={completed} alt="a gold metal" /></button>
+                <button><img src={check} alt="a green check mark" /></button>
                 :
-                <button><img src={check} alt="a green checkmark" /></button>
+                <button><img src={completed} alt="a gold medal" /></button>
                 }
               </form>
             </div>

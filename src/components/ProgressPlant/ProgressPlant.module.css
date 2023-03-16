@@ -23,3 +23,10 @@
 .container a {
   text-decoration: none;
 }
+
+.redirect a {
+  text-decoration: none;
+  color: #fff;
+  border: black 2px solid;
+
+}
