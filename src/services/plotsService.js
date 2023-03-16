@@ -29,8 +29,21 @@ async function createPlot(form) {
   }
 }
 
+async function getPlotsById(id) {
+  try {
+    const res = await fetch(`${BASE_URL}/profile/${id}`, {
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`,
+      }
+    })
+    return res.json()
+  } catch (error) {
+    console.log(error)
+  }
+}
 
 export { 
   getPlots,
   createPlot,
+  getPlotsById
 }

@@ -3,6 +3,7 @@ import empty from '../../assets/Pots _ Plants/mobile-namelesspot.png'
 import small from '../../assets/Pots _ Plants/ficus elastica tineke - small.png';
 import medium from '../../assets/Pots _ Plants/ficus elastica tineke - medium.png';
 import large from '../../assets/Pots _ Plants/ficus elastica tineke - large.png';
+import { Link } from 'react-router-dom';
 
 
 export default function ProgressPlant({ plot }) {
@@ -12,22 +13,25 @@ export default function ProgressPlant({ plot }) {
 
   let percentComplete = completedActionCount / actionsCount
 
-  percentComplete = 1
+  console.log(completeActions, "complete actions")
+  // percentComplete = .66
 
   return (
     <div className={styles.container}>
-      {percentComplete === 0 ?
-      <img src={empty} alt="empty pot" />
-      :
-        percentComplete < .4 ?
-        <img src={small} alt="small plant" />
+      <Link to={"/actions"}>
+        {percentComplete === 0 ?
+        <img src={empty} alt="empty pot" style={{width: 80}}/>
         :
-          percentComplete < .7 ?
-          <img src={medium} alt="medium plant" />
+          percentComplete < .4 ?
+          <img src={small} alt="small plant" />
           :
-          <img src={large} alt="large plant" />
-      }
-      <p>{plot.name}</p>
+            percentComplete < .7 ?
+            <img src={medium} alt="medium plant" />
+            :
+            <img src={large} alt="large plant" />
+        }
+        <p>{plot.name}</p>
+      </Link>
     </div>
   )
 }

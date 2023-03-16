@@ -1,25 +1,23 @@
 import styles from './Garden.module.css'
 import ProgressPlantContainer from '../../components/ProgressPlantContainer/ProgressPlantContainer'
 import { useState, useEffect } from "react"
-import * as profileService from '../../services/profileService'
+import * as plotsService from '../../services/plotsService'
 
-export default function Garden({ user }) {
-  const [profile, setProfile] = useState({
-    plots: []
-  })
+export default function Garden({ user, profile }) {
+  const [plots, setPlots] = useState([])
 
   useEffect(() => {
-    const fetchProfile = async () => {
-      const profileData = await profileService.getProfile(user.profile)
-      setProfile(profileData)
+    const fetchPlots = async () => {
+      const plotsData = await plotsService.getPlotsById(profile._id)
+      setPlots(plotsData)
     }
-    fetchProfile()
-  }, [user])
+    fetchPlots()
+  }, [])
 
   
   return (
     <div className={styles.container}>
-      <ProgressPlantContainer profile={profile} />
+      <ProgressPlantContainer plots={plots} />
     </div>
   )
 }

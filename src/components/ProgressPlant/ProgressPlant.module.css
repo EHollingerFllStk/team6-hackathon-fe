@@ -3,19 +3,20 @@
   flex-direction: column;
   justify-content: end;
   width: 33vw;
+  text-align: center;
 }
 
 .container img {
-  z-index: 0;
   object-fit: contain;
-  
+  width: 90%;
 }
 
 .container p {
-  z-index: 1;
   color: white;
-  position: absolute;
-  bottom: 100;
-  /* width: 100%; */
-  text-align: center;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.container a {
+  text-decoration: none;
 }
